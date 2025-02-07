@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ball animation</title>
+    <style>
+      .container {
+        width: 50vw;
+        height: 50vh;
+        background-color: aqua;
+        position: relative;
+        overflow: hidden;
+      }
+      .ball {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: red;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        animation: left 3s linear infinite,
+          drop 4s cubic-bezier(0.5, 0.05, 1, 0.5) infinite;
+      }
+      @keyframes left {
+        from {
+          left: 0%;
+        }
+        to {
+          left: 94.8%;
+          background-color: yellow;
+        }
+      }
+      @keyframes drop {
+        0% {
+          bottom: 88%;
+          animation-timing-function: ease-in;
+        }
+        25% {
+          bottom: 0%;
+          animation-timing-function: ease-out;
+        }
+        50% {
+          bottom: 88%;
+          animation-timing-function: ease-in;
+        }
+        75% {
+          bottom: 0%;
+          animation-timing-function: ease-out;
+        }
+        100% {
+          bottom: 88%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ball"></div>
+    </div>
+  </body>
+</html>
