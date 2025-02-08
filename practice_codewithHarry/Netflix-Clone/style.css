@@ -205,3 +205,16 @@ input::placeholder {
   right: 10px;  
 }
 
+.long-box{
+  background-color: rgb(7, 7, 11);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 0vh 10vw;
+}
+.long-box h2{
+  padding-bottom: 2%;
+}
+.long-box .box{
+  display: flex;
+  color: white;
+}
