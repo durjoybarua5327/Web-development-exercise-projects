@@ -24,18 +24,95 @@ nav {
   max-width: 80vw;
   justify-content: space-between;
   margin: auto;
-  padding-top: 1%;
+  padding-top: 1.2%;
+ padding-top: 3vh;
 }
 nav span img {
   height: 40px;
   width: auto;
+  position: relative;
+  z-index: 1;
 }
 nav span {
   text-align: center;
   justify-content: center;
+  font-family: 'Segoe UI', sans-serif, Verdana, sans-serif;
+  
 }
 nav span button {
-  background-color: red;
+  background-color: rgb(229, 9, 20);
   border: none;
   color: white;
+  position: relative;
+  z-index: 1;
+  padding: 8px 15px;
+  border-radius:calc(0.25rem - 0.0625rem);
+  font-weight: 750;
+}
+.head-lines{
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family: 'Segoe UI', sans-serif, Verdana, sans-serif;
+    font-weight: 1200;
+    padding-top: 25vh;
+    width: 40vw;
+    margin: auto;
+    text-align: center;
+}
+.head-lines h1{
+    font-size: 3.5rem; 
+    padding-bottom: 2vh;
+}
+
+.mail-button {
+    width: 50vw;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif, Verdana, sans-serif;
+    margin: auto;
+    place-items: center; 
+}
+.mail-button h4{
+    padding-top: 5vh;
+    color: white;
+}
+.mail{
+    display: flex;
+    position: relative;
+    z-index: 1;
+    margin-top: 3vh;
+}
+
+.mail-button .mail input{
+    height: 8vh;
+    width: 25vw;
+    background-color: transparent;
+    border: 1px solid white;
+}
+input::placeholder {
+    color: #c7bab7;
+    padding-left: 15px; 
+    font-weight: 500;
+    font-size: 1rem;
+}
+.mail-button .mail h2{
+    display: flex;
+    color: white;
+    word-wrap: normal;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    margin-left: 5px;
+    padding: 0px 10px ;
+}
+.mail-button .mail i{
+    color: white;
+}
+.mail-button .mail img{
+    height: 40px;
+    width: 20px;
+    padding-left:10px;
+
 }
