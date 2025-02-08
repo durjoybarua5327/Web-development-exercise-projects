@@ -127,7 +127,7 @@ input::placeholder {
 .middle h2{
   color: white;
   text-align: left;
-  margin-left: 200px;
+  margin-left: 9%;
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -180,6 +180,8 @@ input::placeholder {
   width: 100%;
   color: white;
   gap: 20px;
+  overflow: hidden;
+  position: relative;
 }
 .features .b1{
   width: 50vw; 
@@ -188,10 +190,18 @@ input::placeholder {
   border: 1px solid rgb(50, 52, 99);
   background-color: rgb(50, 52, 99);
   border-radius: 6%;
+  position: relative; 
 }
 .features p{
   margin-top: 20px;
   color: #c7bab7;
   font-weight: 600;
+}
+.features img{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px; 
+  right: 10px;  
 }
 
