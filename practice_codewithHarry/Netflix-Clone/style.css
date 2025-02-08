@@ -3,7 +3,7 @@
   padding: 0;
 }
 .main {
-  height: 100vh;
+  height: 110vh;
   background-size: cover;
   background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/638e9299-0637-42d1-ba39-54ade4cf2bf6/web/BD-en-20250203-TRIFECTA-perspective_374d61ca-7a16-4fa9-8cf6-1203d333587e_medium.jpg);
   background-position: center center;
@@ -12,7 +12,7 @@
   background-repeat: no-repeat;
 }
 .first-background {
-  height: 100vh;
+  height: 110vh;
   width: 100%;
   opacity: 0.65;
   position: absolute;
@@ -110,9 +110,11 @@ input::placeholder {
 .mail-button .mail i{
     color: white;
 }
-.mail-button .mail img{
+.mail-button .mail svg{
     height: 40px;
-    width: 20px;
+    width: 30px;
     padding-left:10px;
-
 }
+
+
+
