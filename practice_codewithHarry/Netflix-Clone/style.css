@@ -210,6 +210,8 @@ input::placeholder {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   padding: 0vh 10vw;
+  height: 110vh;
+  
 }
 .long-box h2{
   padding-bottom: 2%;
@@ -217,4 +219,45 @@ input::placeholder {
 .long-box .box{
   display: flex;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background-color: rgb(56, 55, 55);
+  font-size: 18px;
+  padding: 25px ;
+}
+.long-box .box img{
+  height: 30px;
+  width: 30px;
+}
+
+
+
+/* 
+.last .mail-box2 {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  margin-top: 3vh;
+  background-color: rgb(7, 7, 11);
+  height: 50vh;
+}
+
+.mail-box2 input {
+  height: 8vh;
+  width: 25vw;
+  background-color: transparent;
+  border: 1px solid rgb(131, 113, 113);
+  border-radius: 3%;
+}
+.mail-box2 input::placeholder {
+  color: #c7bab7;
+  padding-left: 15px;
+  font-weight: 500;
+  font-size: 1rem;
+} */
+
+.last{
+  background-color: rgb(11, 8, 7);
+  height: 50vh;
 }
