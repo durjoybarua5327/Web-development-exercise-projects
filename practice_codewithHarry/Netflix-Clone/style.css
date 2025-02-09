@@ -124,6 +124,7 @@ input::placeholder {
   width: 100%;
   min-height: 60vh ;
 }
+
 .middle h2{
   color: white;
   text-align: left;
@@ -137,12 +138,17 @@ input::placeholder {
   overflow-x: auto;
   scrollbar-width: none; 
   justify-content: center;
+
 }
+
 .box {
   position: relative;
   min-width: 150px;
   flex-shrink: 0;
-
+  transition: transform .2s;
+}
+.box:hover{
+  transform: scale(1.08);
 }
 .box img {
   width: 170px;
@@ -216,7 +222,7 @@ input::placeholder {
 .long-box h2{
   padding-bottom: 2%;
 }
-.long-box .box{
+.long-box .box2{
   display: flex;
   color: white;
   display: flex;
@@ -225,13 +231,16 @@ input::placeholder {
   background-color: rgb(56, 55, 55);
   font-size: 18px;
   padding: 25px ;
+  transition: background-color 0.3s ease-in-out;
 }
-.long-box .box img{
+.long-box .box2 img{
   height: 30px;
   width: 30px;
 }
 
-
+.box2:hover{
+  background-color: #615f5f;
+}
 
 /* 
 .last .mail-box2 {
