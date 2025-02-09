@@ -3,13 +3,21 @@
   padding: 0;
 }
 .main {
-  height: 110vh;
-  background-size: cover;
+  min-height: 110vh;
+  background-position: center center;
+  background-position: center 15%;
+  position: relative; 
+  background-repeat: no-repeat;
+
+}
+.back{
+  min-height: 110vh;
   background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/638e9299-0637-42d1-ba39-54ade4cf2bf6/web/BD-en-20250203-TRIFECTA-perspective_374d61ca-7a16-4fa9-8cf6-1203d333587e_medium.jpg);
   background-position: center center;
   background-position: center 15%;
-  position: relative;
+  position: relative; 
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .first-background {
   height: 110vh;
@@ -107,6 +115,9 @@ input::placeholder {
   margin-left: 5px;
   padding: 0px 10px;
 }
+.mail-button .mail h2:hover {
+  background-color: darkred;
+}
 .mail-button .mail i {
   color: white;
 }
@@ -117,7 +128,6 @@ input::placeholder {
 }
 
 .middle{
-  margin-top: 10%;
   position: relative;
   background-color: rgb(7, 7, 11);
   border-top: 5px solid rgb(212, 34, 46);
@@ -216,7 +226,7 @@ input::placeholder {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   padding: 0vh 10vw;
-  height: 110vh;
+  height: 95vh;
   
 }
 .long-box h2{
@@ -242,31 +252,74 @@ input::placeholder {
   background-color: #615f5f;
 }
 
-/* 
-.last .mail-box2 {
-  display: flex;
-  position: relative;
-  z-index: 1;
-  margin-top: 3vh;
+.last {
   background-color: rgb(7, 7, 11);
-  height: 50vh;
+  height: 85vh; 
+  width: 100%;
+  
+  margin: auto;
+  text-align: center;
+}
+.last p{
+  color: white;
+  font-family: 'Segoe UI', sans-serif, serif, 'Times New Roman', Times;
+}
+.mail-box2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+  color: white;
+  font-family: 'Segoe UI', sans-serif, serif, 'Times New Roman', Times;
 }
 
 .mail-box2 input {
   height: 8vh;
-  width: 25vw;
+  width: 37vw;
   background-color: transparent;
   border: 1px solid rgb(131, 113, 113);
   border-radius: 3%;
+  padding-left: 15px;
+  font-size: 1rem;
+  font-weight: 500;
 }
+
 .mail-box2 input::placeholder {
   color: #c7bab7;
-  padding-left: 15px;
-  font-weight: 500;
-  font-size: 1rem;
-} */
-
-.last{
-  background-color: rgb(11, 8, 7);
-  height: 50vh;
 }
+
+.mail-box2 h2 {
+  display: flex;
+  color: white;
+  word-wrap: normal;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  margin-left: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.mail-box2 svg {
+  height: 40px;
+  width: 30px;
+  padding-left: 10px;
+}
+
+.mail-box2 h2:hover {
+  background-color: darkred;
+}
+
+.help-center{
+  font-family: 'Segoe UI', sans-serif, serif, 'Times New Roman', Times;
+  color: #979291;
+  justify-content: center;
+}
+
+.last-box{
+  display: flex;
+
+  padding: 2vh 5vw;
+  gap: 6vw;
+}
+
