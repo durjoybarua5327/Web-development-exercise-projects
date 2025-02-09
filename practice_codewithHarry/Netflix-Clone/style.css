@@ -56,6 +56,9 @@ nav span button {
   border-radius: calc(0.25rem - 0.0625rem);
   font-weight: 750;
 }
+nav span button:hover {
+  background-color: rgb(165, 14, 21);
+}
 .head-lines {
   position: relative;
   z-index: 1;
@@ -311,15 +314,25 @@ input::placeholder {
 }
 
 .help-center{
-  font-family: 'Segoe UI', sans-serif, serif, 'Times New Roman', Times;
-  color: #979291;
-  justify-content: center;
+  color: rgb(175, 173, 173);
+  padding: 5vh 10vw;
+  font-family: 'Segoe UI', sans-serif, serif, Verdana;
+}
+
+.help-center h5{
+  text-align: left;
+  padding-bottom: 2vh;
+  text-decoration: underline;
+  font-weight: 700;
+
+}
+.all-last-box{
+  display: flex;
+  gap: 3vw;
+  padding-top: 7vh;
+  
 }
 
 .last-box{
-  display: flex;
-
-  padding: 2vh 5vw;
-  gap: 6vw;
+  width: 50vw;
 }
-
