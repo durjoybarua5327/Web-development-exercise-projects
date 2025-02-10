@@ -8,7 +8,6 @@
   background-position: center 15%;
   position: relative; 
   background-repeat: no-repeat;
-
 }
 .back{
   min-height: 110vh;
@@ -19,6 +18,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .first-background {
   height: 110vh;
   width: 100%;
@@ -27,6 +27,7 @@
   top: 0;
   background-color: black;
 }
+
 nav {
   display: flex;
   max-width: 80vw;
@@ -74,7 +75,6 @@ nav span button:hover {
   font-size: 3.5rem;
   padding-bottom: 2vh;
 }
-
 .mail-button {
   width: 50vw;
   position: relative;
@@ -94,7 +94,6 @@ nav span button:hover {
   z-index: 1;
   margin-top: 3vh;
 }
-
 .mail-button .mail input {
   height: 8vh;
   width: 25vw;
