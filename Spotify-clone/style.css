@@ -122,7 +122,9 @@ body{
 }
 .install-app:hover{
     filter: brightness(100%);
+
 }
+
 .install-app img{
     height: 17px;
     width: 17px;
