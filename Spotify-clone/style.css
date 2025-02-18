@@ -3,6 +3,7 @@ body{
     color: white;
     margin: 8px;
     padding: 0;
+    margin-left: 2vw;
 }
 .left{
     width: 25vw;
@@ -13,29 +14,33 @@ body{
 .home-search {
     display: flex;
     align-items: center;
+    gap: 0.7vw;  
+    justify-content: center;
+    margin-left: 20vw;
 }
 .top-bar{
     justify-content: space-between;
+    display: flex;
+    align-items: center;
     
 }
-
 .home-icon{
     display: flex;
-    height:85%;
-    width: 5%;
+    height:6vh;
+    width: 3vw;
     border-radius: 50%;
     background-color: rgb(33, 32, 32);
     padding: 2px;
     justify-content: center;
     text-align: center;
     align-items: center;
+    
 }
 .search-bar {
     position: relative;
-    width: 400px;
-    flex-grow: 1;
-    margin-right: 25vw;
-    
+    width: 450px;
+    flex-grow: 1;  
+     
 }
 .search-bar :hover{
     background-color: #313131;
@@ -89,3 +94,49 @@ body{
     filter: invert(0%);
 }
 
+.upper-right{
+    gap: 2vw;
+    font-family: sans-serif;
+    font-weight: 550;
+    font-size: 0.8rem;
+}
+.explore{
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+    border-radius: 1vw;
+    padding: 5px 5px 5px 5px ;
+    height: 3vh;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.install-app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4vw;
+    filter: brightness(80%);
+    color: #bebebe;
+}
+.install-app:hover{
+    filter: brightness(100%);
+}
+.install-app img{
+    height: 17px;
+    width: 17px;
+}
+.bell-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .bell-icon img{
+    height: 17px;
+    width: 17px;
+    filter: invert(50%);
+ }
+ .bell-icon img:hover{
+    filter: invert(0%);
+ }
