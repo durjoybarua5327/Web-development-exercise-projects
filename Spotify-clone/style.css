@@ -122,9 +122,7 @@ body{
 }
 .install-app:hover{
     filter: brightness(100%);
-
 }
-
 .install-app img{
     height: 17px;
     width: 17px;
@@ -142,3 +140,4 @@ body{
  .bell-icon img:hover{
     filter: invert(0%);
  }
+ 
