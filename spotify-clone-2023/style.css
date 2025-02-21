@@ -164,3 +164,13 @@ transition: all 0.5s ease-out;
     bottom:85px;
     opacity: 1;
 }
+.songlist{
+    padding: 10px 0 6px 0;
+}
+.songlist ul{
+    list-style-type: none;
+}
+.songlist li{
+    background-color: #2a2929;
+    padding: 5px 4px;
+}

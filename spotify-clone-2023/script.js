@@ -11,16 +11,22 @@ async function get_songs() {
   for (let i = 0; i < as.length; i++) {
     const element = as[i];
     if (element.href.endsWith(".m4a")) {
-      songs.push(element.href);
+      songs.push(element.href.split("/music/")[1]);
     }
   }
   return songs;
 }
 
 async function main() {
-  songs = await get_songs();
+  let songs = await get_songs();
+  let songul = document.querySelector(".songlist").getElementsByTagName("ul")[0];
+  for (const song of songs) {
+    songul.innerHTML = songul.innerHTML + `<li>${song.replaceAll("%20"," ")}</li>`;
+  }
   let audio = new Audio(songs[1]);
-//   audio.play();
-  console.log(songs);
+  //   audio.play();
+  audio.addEventListener("loadeddata", () => {
+    console.log(audio.duration, audio.currentSrc, audio.currentTime);
+  });
 }
 main();
