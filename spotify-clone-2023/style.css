@@ -87,11 +87,18 @@ body{
     outline: none;
     font-weight: bold;
 }
+.signup:hover{
+    font-size: 14px;
+    color: rgb(251, 251, 251);
+}
 .login{
     padding: 6px 12px;
     border-radius: 20px;
 }
-
+.login:hover{
+    font-size: 14px;
+    
+}
 .song-playlist {
     padding: 10px 20px;
     background:#121212;
