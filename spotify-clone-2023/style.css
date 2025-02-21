@@ -6,21 +6,25 @@
 body{
     background-color: black;
     color: white;
+    
+}
+.container{
+    display: flex;
 }
 .left{
     width: 25vw;
-    border: 1px solid red;
     padding: 10px;
 }
 .right{
     width: 75vw;
-    border: 1px solid red;
+    padding-top: 15px;
 }
 .home{
-    background-color:  #121212;;
+    background-color:  #121212;
     border-radius: 7px;
     margin: 5px;
     padding: 7px;
+    font-family: sans-serif;
 }
 .home ul li{
     display: flex;
@@ -29,4 +33,60 @@ body{
     list-style: none;
     padding-top: 14px;
     font-weight: bold;
+}
+.library-part{
+    border-radius: 7px;
+    padding: 25px;
+    margin: 5px;
+    background-color: #121212;
+    padding-bottom: 25px;
+    min-height: 70vh;
+    position: relative;
+}
+.playlist{
+    display: flex;
+    width: 100%;
+    gap: 7px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    align-items: center; 
+}
+.playlist img{
+    width: 20px;
+    height: 20px;
+}
+
+.footer{
+    display: flex;
+    font-size: 10px;
+    color: gray;
+    gap: 13px;
+    position: absolute;
+    bottom: 23px;
+}
+.footer a{
+    color: gray;
+}
+
+.navigationbar{
+    background-color: rgb(34 34 34);
+    border-radius: 3px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.accessbtn > *{
+   margin: 0 7px;
+    
+}
+.signup{
+    color: rgb(197, 190, 190);
+    background-color: rgb(34 34 34);
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+.login{
+    padding: 6px 12px;
+    border-radius: 20px;
 }
