@@ -12,7 +12,7 @@ async function get_songs() {
     const element = as[i];
     if (element.href.endsWith(".m4a")) {
       songs.push(element.href.split("/music/")[1]);
-    }
+    } 
   }
   return songs;
 }
@@ -23,6 +23,7 @@ async function main() {
   for (const song of songs) {
     songul.innerHTML = songul.innerHTML + `<li>${song.replaceAll("%20"," ")}</li>`;
   }
+
   let audio = new Audio(songs[1]);
   //   audio.play();
   audio.addEventListener("loadeddata", () => {
