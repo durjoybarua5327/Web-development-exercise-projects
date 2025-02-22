@@ -1,5 +1,8 @@
 console.log("Let's start the js");
 
+
+let currentsong = new Audio();
+
 async function get_songs() {
   let a = await fetch("http://127.0.0.1:5500/spotify-clone-2023/music/");
   let response = await a.text();
@@ -17,8 +20,9 @@ async function get_songs() {
   return songs;
 }
 const playmusic= (musics)=>{
-  let audio = new Audio("music/"+musics)
-  audio.play()
+  // let audio = new Audio("music/"+musics)
+  currentsong.src= "music/"+ musics
+  currentsong.play()
 }
 
 async function main() {
