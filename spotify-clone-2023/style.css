@@ -256,3 +256,7 @@ body {
   background-color: white;
   transition: left 0.5s ;
 }
+
+.control-icons img{
+  cursor: pointer;
+}
