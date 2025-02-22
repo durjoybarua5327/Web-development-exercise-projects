@@ -218,17 +218,41 @@ body {
 }
 
 .play-bar {
-  display: flex;
+  background: rgb(31, 30, 30);
   width: 70%;
   height: 60px;
-  background: rgb(59, 59, 59);
+  position: fixed;
+  border-radius: 7px;
+  padding-left: 25px;
+}
+.control-icons{
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 45px;
-  position: fixed;
-  bottom: 25px;
 }
 .play-bar img {
-  height: 30px;
-  width: 30px;
+  height: 18px;
+  width: 18px;
+  margin-top: 17px;
+}
+.seek-bar{
+  display: flex;
+  height: 2px;
+  width: 95%;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 7px;
+  
+}
+.circle-in-seekbar{
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  position: relative;
+  bottom: 4px;
+  left: 0%;
+  background-color: white;
+  transition: left 0.5s ;
 }

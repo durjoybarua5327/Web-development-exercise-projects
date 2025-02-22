@@ -16,7 +16,10 @@ async function get_songs() {
   }
   return songs;
 }
-
+const playmusic= (musics)=>{
+  let audio = new Audio("/music/"+musics)
+  audio.play()
+}
 async function main() {
   let songs = await get_songs();
   let songul = document.querySelector(".songlist").getElementsByTagName("ul")[0];
@@ -25,8 +28,8 @@ async function main() {
     
                 <img src="images/music.svg" alt="">
                 <div class="info">
-                  <div>${song.replaceAll("%20"," ").split("-")[0]}</div>
-                  <div>${song.replaceAll("%20"," ").split("-")[1]}</div>
+                  <div>${song.replaceAll("%20"," ").split("-")[0]}
+                  ${song.replaceAll("%20"," ").split("-")[1]}</div>
                 </div>
                 <div class="playnow ">
                   <span>Play Now</span>
@@ -34,11 +37,20 @@ async function main() {
                 </div>
               </li>`;
   }
+  Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e=>{
+    e.addEventListener("click",()=>{
+      console.log(e.querySelector(".info").firstElementChild.innerHTML)
+      playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
+    })
 
-  let audio = new Audio(songs[1]);
-  //   audio.play();
-  audio.addEventListener("loadeddata", () => {
-    console.log(audio.duration, audio.currentSrc, audio.currentTime);
-  });
+  })
+
+
 }
+
+
+
+
+
+
 main();
