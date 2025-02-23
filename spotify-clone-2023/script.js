@@ -23,14 +23,12 @@ const playmusic = (musics, pause=false) => {
   currentsong.src = "music/" + musics;
   
   let playBtn = document.querySelector(".play-btn img");
+  document.querySelector(".songName").innerHTML = musics.replaceAll("%20", " ").split(".m4a")[0];
+
   if(!pause){
     currentsong.play();
     playBtn.src = "images/paused-icon.svg";
   }
-  else{
-    document.querySelector(".songName").innerHTML = musics.replaceAll("%20", " ").split(".m4a")[0];
-  }
-  
 };
 
 function formatTime(seconds) {
@@ -69,7 +67,7 @@ async function main() {
     document.querySelector(".songlist").getElementsByTagName("li")
   ).forEach((e) => {
     e.addEventListener("click", () => {
-      console.log(e.querySelector(".info").firstElementChild.innerHTML);
+      // console.log(e.querySelector(".info").firstElementChild.innerHTML);
       playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
     });
   });
