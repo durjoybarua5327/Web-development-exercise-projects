@@ -221,15 +221,18 @@ body {
   background: rgb(31, 30, 30);
   width: 70%;
   height: 60px;
+  display:flex;
+  justify-content: space-between;
   position: fixed;
   border-radius: 7px;
-  padding-left: 25px;
 }
 .control-icons{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 45px;
+  position: fixed;
+  padding-left: 400px;
 }
 .play-bar img {
   height: 18px;
@@ -259,4 +262,13 @@ body {
 
 .control-icons img{
   cursor: pointer;
+}
+.play-control-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  padding-bottom: 18px;
+  
+  width: 100%;
 }

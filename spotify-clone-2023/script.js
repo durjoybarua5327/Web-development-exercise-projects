@@ -24,13 +24,20 @@ const playmusic = (musics) => {
   currentsong.play();
   let playBtn = document.querySelector(".play-btn img");
   playBtn.src = "images/paused-icon.svg";
+  
+  document.querySelector(".songName").innerHTML = musics.replaceAll("%20", " ").split(".m4a")[0];
 };
 
-function formatTime(timeString) {
-    let [minutes, seconds] = timeString.split(":").map(parseFloat);
-    seconds = Math.round(seconds); 
-    if (seconds === 60) minutes++, seconds = 0; // Handle 60 seconds case
-    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+function formatTime(seconds) {
+  seconds = Math.floor(seconds); // Ensure seconds is an integer
+  let minutes = Math.floor(seconds / 60);
+  let secs = seconds % 60;
+
+  // Ensure two-digit format
+  let formattedMinutes = String(minutes).padStart(2, '0');
+  let formattedSeconds = String(secs).padStart(2, '0');
+
+  return `${formattedMinutes}:${formattedSeconds}`;
 }
 async function main() {
   let songs = await get_songs();
@@ -74,9 +81,14 @@ async function main() {
     }
   });
 
-  currentsong.addEventListener("timeupdate",()=>{
-    document.querySelector(".timeshow").innerHTML=`${ formatTime(currentsong.currentTime)}/${formatTime(currentsong.duration)}`
-  })
+  currentsong.addEventListener("timeupdate", () => {
+    if (!isNaN(currentsong.duration)) {
+        document.querySelector(".timeshow").innerHTML = 
+            `${formatTime(currentsong.currentTime)} / ${formatTime(currentsong.duration)}`;
+    }
+    
+});
+
 }
 
 main();
