@@ -28,7 +28,6 @@ const playmusic = (musics, pause=false) => {
     playBtn.src = "images/paused-icon.svg";
   }
   else{
-    
     document.querySelector(".songName").innerHTML = musics.replaceAll("%20", " ").split(".m4a")[0];
   }
   
@@ -94,8 +93,16 @@ async function main() {
         document.querySelector(".timeshow").innerHTML = 
             `${formatTime(currentsong.currentTime)} / ${formatTime(currentsong.duration)}`;
     }
-    
+    document.querySelector(".circle-in-seekbar").style.left= (currentsong.currentTime/currentsong.duration)*100 +"%";
 });
+
+document.querySelector(".seek-bar").addEventListener("click", e=>{
+  let percentage = (e.offsetX /e.target.getBoundingClientRect().width)*100;
+
+  document.querySelector(".circle-in-seekbar").style.left= percentage+"%"
+  currentsong.currentTime= (currentsong.duration *percentage)/100
+});
+
 
 }
 
