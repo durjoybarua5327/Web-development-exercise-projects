@@ -18,14 +18,20 @@ async function get_songs() {
   }
   return songs;
 }
-const playmusic = (musics) => {
+const playmusic = (musics, pause=false) => {
   // let audio = new Audio("music/"+musics)
   currentsong.src = "music/" + musics;
-  currentsong.play();
-  let playBtn = document.querySelector(".play-btn img");
-  playBtn.src = "images/paused-icon.svg";
   
-  document.querySelector(".songName").innerHTML = musics.replaceAll("%20", " ").split(".m4a")[0];
+  let playBtn = document.querySelector(".play-btn img");
+  if(!pause){
+    currentsong.play();
+    playBtn.src = "images/paused-icon.svg";
+  }
+  else{
+    
+    document.querySelector(".songName").innerHTML = musics.replaceAll("%20", " ").split(".m4a")[0];
+  }
+  
 };
 
 function formatTime(seconds) {
@@ -41,6 +47,7 @@ function formatTime(seconds) {
 }
 async function main() {
   let songs = await get_songs();
+  playmusic(songs[0],true);
   let songul = document
     .querySelector(".songlist")
     .getElementsByTagName("ul")[0];
@@ -67,6 +74,7 @@ async function main() {
       playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
     });
   });
+  
   document.querySelector(".play-btn img").addEventListener("click", () => {
     let playBtn = document.querySelector(".play-btn img");
 
