@@ -101,6 +101,14 @@ document.querySelector(".seek-bar").addEventListener("click", e=>{
   currentsong.currentTime= (currentsong.duration *percentage)/100
 });
 
+document.querySelector(".hamburger").addEventListener("click",()=>{
+  document.querySelector(".left").style.left="0px";
+  
+});
+document.querySelector(".close-icon").addEventListener("click",()=>{
+  document.querySelector(".left").style.left="-100%"
+})
+
 
 }
 
