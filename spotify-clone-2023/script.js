@@ -108,8 +108,6 @@ document.querySelector(".hamburger").addEventListener("click",()=>{
 document.querySelector(".close-icon").addEventListener("click",()=>{
   document.querySelector(".left").style.left="-100%"
 })
-
-
 }
 
 main();
