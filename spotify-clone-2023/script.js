@@ -119,17 +119,21 @@ async function main() {
     if (index > 0) {
       playmusic(songs[index - 1]);
     }
+    else {
+      playmusic(songs[songs.length - 1]);
+    }
   });
   document.querySelector(".rightarrow").addEventListener("click", () => {
 
     let currentSongName = currentsong.src.split("/").pop();
     let index = songs.indexOf(currentSongName);
-    if (index < songs.length) {
+    if (index < songs.length-1) {
       playmusic(songs[index + 1]);
     }
     else {
-      playmusic(songs[songs.length - 1]);
+      playmusic(songs[0]);
     }
+    
   });
 }
 
