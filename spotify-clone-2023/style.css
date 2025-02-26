@@ -113,6 +113,7 @@ body {
   max-height: 60vh;
   scrollbar-width: thin;
   scrollbar-color: #555 #252525;
+  justify-content: center;
 }
 
 .card-container::-webkit-scrollbar {
@@ -227,11 +228,12 @@ body {
 .play-bar {
   background: rgb(31, 30, 30);
   width: 70vw;
-  height: 60px;
+  min-height: 70px;
   display:flex;
   justify-content: space-between;
   position: fixed;
   border-radius: 7px;
+  padding:5px 0;
   
 }
 .control-icons{
@@ -301,28 +303,39 @@ body {
 @media (max-width: 1300px) {
   .left{
     position: absolute;
-    left: -110%;
+    left: -200%;
     transition: all 1s ease-in;
     width: 378px;
     z-index: 1;
   }
   .right{
     width: 100%;
+    margin: 0;
+
   }
   .control-icons{
     width: 35%;
   }
+  
   .play-bar{
     width: 95%;
+    display: flex;
+    justify-content: center;    
   }
+  
   .songName{
-    width: 35%;
+    width: 32%;
+    height: auto;
   }
   .hamburger{
     display: block;
   }
+
   .card{
-    width: 14vw;
+    width: 90vw;
+  }
+  .card-container{
+    margin: 0;
   }
   .close-icon{
     display: block;
