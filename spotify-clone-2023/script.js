@@ -1,7 +1,7 @@
 console.log("Let's start the js");
 
 let currentsong = new Audio();
-
+let songs;
 async function get_songs() {
   let a = await fetch("http://127.0.0.1:5500/spotify-clone-2023/music/");
   let response = await a.text();
@@ -18,14 +18,16 @@ async function get_songs() {
   }
   return songs;
 }
-const playmusic = (musics, pause=false) => {
+const playmusic = (musics, pause = false) => {
   // let audio = new Audio("music/"+musics)
   currentsong.src = "music/" + musics;
-  
-  let playBtn = document.querySelector(".play-btn img");
-  document.querySelector(".songName").innerHTML = musics.replaceAll("%20", " ").split(".m4a")[0];
 
-  if(!pause){
+  let playBtn = document.querySelector(".play-btn img");
+  document.querySelector(".songName").innerHTML = musics
+    .replaceAll("%20", " ")
+    .split(".m4a")[0];
+
+  if (!pause) {
     currentsong.play();
     playBtn.src = "images/paused-icon.svg";
   }
@@ -37,14 +39,14 @@ function formatTime(seconds) {
   let secs = seconds % 60;
 
   // Ensure two-digit format
-  let formattedMinutes = String(minutes).padStart(2, '0');
-  let formattedSeconds = String(secs).padStart(2, '0');
+  let formattedMinutes = String(minutes).padStart(2, "0");
+  let formattedSeconds = String(secs).padStart(2, "0");
 
   return `${formattedMinutes}:${formattedSeconds}`;
 }
 async function main() {
-  let songs = await get_songs();
-  playmusic(songs[0],true);
+  songs = await get_songs();
+  playmusic(songs[0], true);
   let songul = document
     .querySelector(".songlist")
     .getElementsByTagName("ul")[0];
@@ -71,11 +73,11 @@ async function main() {
       playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
     });
   });
-  
+
   document.querySelector(".play-btn img").addEventListener("click", () => {
     let playBtn = document.querySelector(".play-btn img");
 
-    if(currentsong.src){
+    if (currentsong.src) {
       if (currentsong.paused) {
         currentsong.play();
         playBtn.src = "images/paused-icon.svg";
@@ -88,26 +90,47 @@ async function main() {
 
   currentsong.addEventListener("timeupdate", () => {
     if (!isNaN(currentsong.duration)) {
-        document.querySelector(".timeshow").innerHTML = 
-            `${formatTime(currentsong.currentTime)} / ${formatTime(currentsong.duration)}`;
+      document.querySelector(".timeshow").innerHTML = `${formatTime(
+        currentsong.currentTime
+      )} / ${formatTime(currentsong.duration)}`;
     }
-    document.querySelector(".circle-in-seekbar").style.left= (currentsong.currentTime/currentsong.duration)*100 +"%";
-});
+    document.querySelector(".circle-in-seekbar").style.left =
+      (currentsong.currentTime / currentsong.duration) * 100 + "%";
+  });
 
-document.querySelector(".seek-bar").addEventListener("click", e=>{
-  let percentage = (e.offsetX /e.target.getBoundingClientRect().width)*100;
+  document.querySelector(".seek-bar").addEventListener("click", (e) => {
+    let percentage = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
 
-  document.querySelector(".circle-in-seekbar").style.left= percentage+"%"
-  currentsong.currentTime= (currentsong.duration *percentage)/100
-});
+    document.querySelector(".circle-in-seekbar").style.left = percentage + "%";
+    currentsong.currentTime = (currentsong.duration * percentage) / 100;
+  });
 
-document.querySelector(".hamburger").addEventListener("click",()=>{
-  document.querySelector(".left").style.left="0px";
-  
-});
-document.querySelector(".close-icon").addEventListener("click",()=>{
-  document.querySelector(".left").style.left="-100%"
-})
+  document.querySelector(".hamburger").addEventListener("click", () => {
+    document.querySelector(".left").style.left = "0px";
+  });
+  document.querySelector(".close-icon").addEventListener("click", () => {
+    document.querySelector(".left").style.left = "-100%";
+  });
+
+  document.querySelector(".leftarrow").addEventListener("click", () => {
+
+    let currentSongName = currentsong.src.split("/").pop();
+    let index = songs.indexOf(currentSongName);
+    if (index > 0) {
+      playmusic(songs[index - 1]);
+    }
+  });
+  document.querySelector(".rightarrow").addEventListener("click", () => {
+
+    let currentSongName = currentsong.src.split("/").pop();
+    let index = songs.indexOf(currentSongName);
+    if (index < songs.length) {
+      playmusic(songs[index + 1]);
+    }
+    else {
+      playmusic(songs[songs.length - 1]);
+    }
+  });
 }
 
 main();
