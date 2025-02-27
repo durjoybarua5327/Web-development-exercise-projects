@@ -113,7 +113,6 @@ body {
   max-height: 60vh;
   scrollbar-width: thin;
   scrollbar-color: #555 #252525;
-  justify-content: center;
 }
 
 .card-container::-webkit-scrollbar {
@@ -285,7 +284,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 4vw;
 }
 .play-control-btn {
   display: flex;
@@ -296,8 +295,7 @@ body {
   width: 100%;
 }
 .songName{
-  word-wrap: break-word;
-  width: 20vw;
+  
   font-size: 15px;
 }
 .hamburger{
@@ -325,16 +323,33 @@ body {
   }
   .control-icons{
     width: 35%;
+    
   }
   
   .play-bar{
     width: 95%;
-    display: flex;
-    justify-content: center;    
+    height: 15vh;
+    display: block;
+    padding: 10px;  
+    justify-content: center;
   }
-  
+
+  .play-control-btn{
+    position: absolute;
+    display: grid;
+    gap: 35px; 
+    width: 100%;
+    padding: 0 0 7px 15px;
+    justify-content: center;
+
+  }
+  .control-icons{
+    position: absolute;
+    bottom: 45px;
+    left: 8vw;
+
+  }
   .songName{
-    width: 32%;
     height: auto;
   }
   .hamburger{
@@ -350,8 +365,7 @@ body {
   .close-icon{
     display: block;
   }
-  .timeshow{
-    width: 10%;
-  }
+ 
+  
 
 }
