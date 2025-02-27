@@ -277,6 +277,16 @@ body {
 .timeshow{
   font-size: 13px;
 }
+.volume{
+  position: relative;
+  bottom: 6px;
+}
+.timevol{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 .play-control-btn {
   display: flex;
   justify-content: space-between;
