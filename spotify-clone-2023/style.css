@@ -308,6 +308,21 @@ body {
   display: none;
   
 }
+.volume{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+}
+.volume img{
+  position: relative;
+  bottom: 3px;
+}
+.volume input{
+  position: relative;
+  top: 7px;
+}
+
 @media (max-width: 1300px) {
   .left{
     position: absolute;
@@ -342,6 +357,10 @@ body {
     padding: 0 0 7px 15px;
     justify-content: center;
 
+  }
+  .seek-bar{
+    position: absolute;
+    bottom: 0;
   }
   .control-icons{
     position: absolute;
