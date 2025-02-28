@@ -4,6 +4,7 @@ let currentsong = new Audio();
 let songs;
 let folder;
 let CurrentFolder;
+
 async function get_songs(folder) {
   CurrentFolder = folder;
   let a = await fetch(`http://127.0.0.1:5500/spotify-clone-2023/${folder}/`);
@@ -74,9 +75,27 @@ function formatTime(seconds) {
 
   return `${formattedMinutes}:${formattedSeconds}`;
 }
+
+
+async function DisplayAlbum() {
+  let a = await fetch(`http://127.0.0.1:5500/spotify-clone-2023/music/`);
+  let response = await a.text();
+  let div = document.createElement("div");
+  div.innerHTML = response;
+  let albums=[]
+  let anchors= div.getElementsByTagName("a")
+  Array.from(anchors).forEach(e=>{
+    if(e.href.includes("/music/")){
+      console.log(e.href.split("/").slice(-1))
+      
+    }
+  })
+}
 async function main() {
   await get_songs("music/Hindi");
   playmusic(songs[0], true);
+
+  DisplayAlbum()
   document.querySelector(".play-btn img").addEventListener("click", () => {
     let playBtn = document.querySelector(".play-btn img");
 
@@ -117,7 +136,9 @@ async function main() {
 
   document.querySelector(".leftarrow").addEventListener("click", () => {
     let currentSongName = currentsong.src.split("/").pop();
+    console.log(currentSongName)
     let index = songs.indexOf(currentSongName);
+    
     if (index > 0) {
       playmusic(songs[index - 1]);
     } else {
@@ -127,6 +148,7 @@ async function main() {
   document.querySelector(".rightarrow").addEventListener("click", () => {
     let currentSongName = currentsong.src.split("/").pop();
     let index = songs.indexOf(currentSongName);
+
     if (index < songs.length - 1) {
       playmusic(songs[index + 1]);
     } else {
@@ -144,6 +166,7 @@ async function main() {
   Array.from(document.querySelectorAll(".card")).forEach((e) => {
     e.addEventListener("click", async (items) => {
       songs = await get_songs(`music/${items.currentTarget.dataset.folder}`);
+      console.log(songs)
     });
   });
 }
