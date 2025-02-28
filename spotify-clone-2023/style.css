@@ -140,6 +140,10 @@ body {
   background-color: #252525;
   padding: 15px 7px 6px 7px;
   position: relative;
+  transition: all 1s;
+}
+.card:hover{
+  background-color: #424242;
 }
 .card > * {
   padding-bottom: 7px;
@@ -295,8 +299,8 @@ body {
   width: 100%;
 }
 .songName{
-  
   font-size: 15px;
+  width: 22vw;
 }
 .hamburger{
   display: none;
@@ -352,7 +356,7 @@ body {
   .play-control-btn{
     position: absolute;
     display: grid;
-    gap: 35px; 
+    gap: 40px; 
     width: 100%;
     padding: 0 0 7px 15px;
     justify-content: center;
@@ -364,12 +368,13 @@ body {
   }
   .control-icons{
     position: absolute;
-    bottom: 45px;
+    bottom: 48px;
     left: 8vw;
 
   }
   .songName{
     height: auto;
+    width: 100%;
   }
   .hamburger{
     display: block;
