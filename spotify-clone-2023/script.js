@@ -22,6 +22,7 @@ async function get_songs(folder) {
   let songul = document
   .querySelector(".songlist")
   .getElementsByTagName("ul")[0];
+  songul.innerHTML=""
 for (const song of songs) {
   songul.innerHTML =
     songul.innerHTML +
