@@ -164,9 +164,9 @@ async function main() {
     document.querySelector(".left").style.left = "-100%";
   });
   document.querySelector(".leftarrow").addEventListener("click", () => {
-    let currentSongName = currentsong.src.split("/").pop().trim();
-    let index = songs.indexOf(decodeURIComponent(currentSongName)); // Decode URI to match song names
-
+    let currentSongName = currentsong.src.split("/").pop();
+    let index = songs.indexOf(currentSongName); 
+    console.log(currentSongName)
     if (index > 0) {
       playmusic(songs[index - 1]);
     } else {
@@ -175,8 +175,8 @@ async function main() {
   });
 
   document.querySelector(".rightarrow").addEventListener("click", () => {
-    let currentSongName = currentsong.src.split("/").pop().trim();
-    let index = songs.indexOf(decodeURIComponent(currentSongName));
+    let currentSongName = currentsong.src.split("/").pop();
+    let index = songs.indexOf(currentSongName);
 
     if (index < songs.length - 1) {
       playmusic(songs[index + 1]);
