@@ -93,6 +93,7 @@ async function DisplayAlbum() {
         `http://127.0.0.1:5500/spotify-clone-2023/music/${folder}/info.json`
       );
       let response = await a.json();
+     
       cardcontainer.innerHTML =
         cardcontainer.innerHTML +
         `<div data-folder="${folder}" class="card">
@@ -213,7 +214,7 @@ async function main() {
       volumeImage.src = "images/mute.svg";
     } else {
       currentsong.volume = 0.5; // Default volume
-      volumeSlider.value = 50;
+      volumeSlider.value = 20;
       volumeImage.src = "images/volume.svg";
     }
   });
