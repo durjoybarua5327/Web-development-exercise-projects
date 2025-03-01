@@ -109,7 +109,7 @@ async function DisplayAlbum() {
                   <path d="M4 7V3L7 5L4 7Z" fill="black" />
                 </svg>
               </div>
-              <img src="images/cover.jpg" alt="" />
+              <img src="music/${folder}/picture.jpg" alt="" />
               <h4>${response.title} </h4>
               <h5>${response.description}</h5>
             </div>`;
