@@ -104,7 +104,7 @@ body {
   background: #121212;
   min-height: 70vh;
 }
-.card-container {
+.cardcontainer {
   margin: 30px;
   display: flex;
   gap: 12px;
@@ -115,22 +115,22 @@ body {
   scrollbar-color: #555 #252525;
 }
 
-.card-container::-webkit-scrollbar {
+.cardcontainer::-webkit-scrollbar {
   width: 8px;
   display: block;
 }
 
-.card-container::-webkit-scrollbar-track {
+.cardcontainer::-webkit-scrollbar-track {
   background: #252525;
   border-radius: 10px;
 }
 
-.card-container::-webkit-scrollbar-thumb {
+.cardcontainer::-webkit-scrollbar-thumb {
   background: rgb(71, 70, 70);
   border-radius: 10px;
 }
 
-.card-container:-webkit-scrollbar-thumb:hover {
+.cardcontainer:-webkit-scrollbar-thumb:hover {
   background: rgb(92, 90, 90);
 }
 
@@ -383,7 +383,7 @@ body {
   .card{
     width: 90vw;
   }
-  .card-container{
+  .cardcontainer{
     margin: 0;
   }
   .close-icon{
