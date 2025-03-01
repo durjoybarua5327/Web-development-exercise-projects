@@ -5,6 +5,7 @@ let songs;
 let folder;
 let CurrentFolder;
 
+
 async function get_songs(folder) {
   CurrentFolder = folder;
   let a = await fetch(`http://127.0.0.1:5500/spotify-clone-2023/${folder}/`);
@@ -20,6 +21,7 @@ async function get_songs(folder) {
       songs.push(element.href.split(`/${folder}/`)[1]);
     }
   }
+
   let songul = document
     .querySelector(".songlist")
     .getElementsByTagName("ul")[0];
@@ -48,6 +50,7 @@ async function get_songs(folder) {
     });
   });
 }
+
 const playmusic = (musics, pause = false) => {
   // let audio = new Audio("music/"+musics)
   currentsong.src = `${CurrentFolder}/` + musics;
@@ -218,5 +221,4 @@ async function main() {
     }
   });
 }
-
 main();
