@@ -116,7 +116,7 @@ async function DisplayAlbum() {
   }
   Array.from(document.querySelectorAll(".card")).forEach((e) => {
     e.addEventListener("click", async (items) => {
-      songs = await get_songs(`music/${items.currentTarget.dataset.folder}`);
+      await get_songs(`music/${items.currentTarget.dataset.folder}`);
       console.log(songs);
     });
   });
