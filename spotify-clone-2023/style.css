@@ -332,7 +332,7 @@ body {
     position: absolute;
     left: -200%;
     transition: all 1s ease-in;
-    width: 378px;
+    width: 365px;
     z-index: 1;
   }
   .right{
